@@ -1,8 +1,61 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from './utils/color'
+import React, {Component} from 'react';
+import { View, Animated, Easing, StatusBar, StyleSheet, Text } from 'react-native';
+import { Constants } from 'expo';
+import { TabNavigator } from "react-navigation";
+import { FontAwesome } from '@expo/vector-icons'
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+import reducer from './reducers';
 
-import { connect } from 'react-redux';
+import Deck from './components/Deck/Deck';
+import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from './utils/colors';
+
+
+const GeneralTabs = TabNavigator({
+  Deck: {
+    screen: Deck,
+    navigationOptions: {
+      tabBarLabel: 'Deck',
+      tabBarIcon: ({ tintColor }) => <FontAwesome name='list' size={30} color={tintColor} />
+    },
+  },
+}, {
+  tabBarOptions: {
+    activeTintColor: lightGrey,
+    inactiveTintColor: grey,
+    style: {
+      height: 56,
+      backgroundColor: darkBlue,
+      shadowColor: 'rgba(0, 0, 0, 0.24)',
+      shadowOffset: {
+        width: 0,
+        height: 3
+      },
+      shadowRadius: 6,
+      shadowOpacity: 1
+    }
+  }
+});
+
+const MainNavigator = StackNavigator({
+  General: {
+    screen: GeneralTabs,
+    navigationOptions: {
+      headerTintColor: 'rgba(200, 100, 50, 1)',
+      headerStyle: {
+        backgroundColor: darkBlue
+      }
+    }
+  },
+}, {
+  transitionConfig : () => ({
+  	transitionSpec: {
+  		duration: 0,
+  		timing: Animated.timing,
+  		easing: Easing.step0,
+  	},
+  })
+});
 
 const styles = StyleSheet.create({
   container: {
@@ -13,23 +66,19 @@ const styles = StyleSheet.create({
   },
 });
 
-class App extends React.Component {
+class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-          <View style={{backgroundColor: paleBlue }}>
-              <Text>Welcome Douglas</Text>
-          </View>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Provider store={createStore(reducer)}>
+        <View style={styles.container}>
+            <View style={{backgroundColor: paleBlue, height: Constants.statusBarHeight }}>
+                <Text>Welcome Douglas</Text>
+            </View>
+            <MainNavigator />
+        </View>
+      </Provider>
     );
   }
 }
 
-function mapStateToProps ({decks}) {
-  return {
-    decks
-  }
-}
-
-export default connect(mapStateToProps)(App)
+export default App;
