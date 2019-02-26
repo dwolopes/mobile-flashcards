@@ -1,12 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { Animated, Easing } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-import Deck from '../Deck/Deck';
 import GeneralTabs from '../GeneralTabs//GeneralTabs'
 import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from '../../utils/colors';
   
-const MainNavigator = createStackNavigator({
+const MainNavigatorRoot = createStackNavigator({
     General: {
       screen: GeneralTabs,
       navigationOptions: {
@@ -26,5 +25,5 @@ const MainNavigator = createStackNavigator({
     })
 });
 
-const Teste = createAppContainer(MainNavigator);
-export default Teste;
+const MainNavigator = createAppContainer(MainNavigatorRoot);
+export default MainNavigator;

@@ -2,6 +2,7 @@ import React from 'react';
 import { FontAwesome } from '@expo/vector-icons'
 import {createBottomTabNavigator} from 'react-navigation';
 
+import AddDeck from '../AddDeck/AddDeck';
 import Deck from '../Deck/Deck';
 import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from '../../utils/colors';
 
@@ -11,6 +12,13 @@ const GeneralTabs = createBottomTabNavigator({
       navigationOptions: {
         tabBarLabel: 'Deck',
         tabBarIcon: ({ tintColor }) => <FontAwesome name='list' size={30} color={tintColor} />
+      },
+    },
+    AddDeck: {
+      screen: AddDeck,
+      navigationOptions: {
+        tabBarLabel: 'Add Deck',
+        tabBarIcon: ({ tintColor }) => <FontAwesome name='plus' size={30} color={tintColor} />
       },
     },
   }, {

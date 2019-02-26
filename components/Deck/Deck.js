@@ -7,6 +7,7 @@ import { white, darkerBlue } from '../../utils/colors'
 import fontPicker from '../../utils/fontPicker'
 
 import Welcome from '../Welcome/Welcome';
+import DeckInfo from '../DeckInfo/DeckInfo';
 
 class Deck extends Component {
   componentDidMount() {
@@ -41,7 +42,7 @@ class Deck extends Component {
         {Object.keys(decks).map((key) => {
           const animatedValue = new Animated.Value(0)
           return <Animated.View key={decks[key].title} style={{transform: [{translateX: animatedValue}]}}>
-{/*             <DeckInfo key={decks[key].title} deck={decks[key]}
+             <DeckInfo key={decks[key].title} deck={decks[key]}
               newPress={() => dispatch(setDetailDeck(decks[key].title))}
               onPress={() => {
                   Animated.sequence([
@@ -59,7 +60,7 @@ class Deck extends Component {
                   })
                 }
               }
-            /> */}
+            />
           </Animated.View>
         })}
         <Text style={{marginBottom: 400}}></Text>

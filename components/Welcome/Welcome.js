@@ -10,11 +10,11 @@ export default function Welcome ({style, navigation}, ...props) {
       <Text style={[style, {color: 'black', fontWeight: 'bold'}]}>MOBILE</Text>
       <Text style={[style, {color: 'black', fontWeight: 'bold'}]}>FLASHCARDS</Text>
       <Text style={styles.noneFound}>(no decks found)</Text>
-{/*       <TouchableOpacity style={styles.button} onPress={() => {
+{       <TouchableOpacity style={styles.button} onPress={() => {
         navigation.navigate('AddDeck')
       }}>
         <Text style={styles.buttonText}>Get started.</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity> }
     </View>
   )
 }

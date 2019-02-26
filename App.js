@@ -10,6 +10,7 @@ import reducer from './reducers';
 import MainNavigator from './components/MainNavigator/MainNavigator';
 import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from './utils/colors';
 import { setLocalNotification } from './utils/notifications'
+import { initApp, setDefaultDecks } from './utils/api';
 
 const styles = StyleSheet.create({
   container: {
@@ -20,6 +21,10 @@ const styles = StyleSheet.create({
   },
 });
 class App extends Component {
+
+  componentDidMount () {
+    setDefaultDecks();
+  }
 
   render() {
     return (
