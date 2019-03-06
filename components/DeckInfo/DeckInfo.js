@@ -11,7 +11,7 @@ export default function DeckInfo ({deck, onPress, bigMode, bonusContent}) {
   return (
     <TouchableOpacity style={eitherStyles.infoCard} onPress={onPress}>
       <Text style={eitherStyles.infoHeader}>{title}</Text>
-      <Text style={eitherStyles.questionText}>{questionsAmt} {questionsAmt === 1 ? "question" : "questions"}</Text>
+      <Text style={eitherStyles.questionText}>{questionsAmt} {questionsAmt === 1 ? "card" : "cards"}</Text>
       {bonusContent}
     </TouchableOpacity>
   )

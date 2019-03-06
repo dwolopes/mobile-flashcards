@@ -1,4 +1,4 @@
-import { RECEIVE_DECKS, ADD_DECK, SET_DETAIL_DECK, ADD_CARD, RESET_DECKS } from '../actions'
+import { RECEIVE_DECKS, ADD_DECK, SET_DETAIL_DECK, ADD_CARD, RESET_DECKS } from '../actions';
 
 export default function decks ( state = {}, action ){
     const {decks} = action;
@@ -7,23 +7,36 @@ export default function decks ( state = {}, action ){
         case RECEIVE_DECKS :
             return {
                 ...state,
+                decks
             };
         
         case ADD_DECK :
             return {
-                ...state,
-                [action.deck.title]:{...action.deck}
+              ...state,
+              decks : {
+                ...state.decks,
+                [action.deck.title] : action.deck
+              }
+          }
+            
+        case SET_DETAIL_DECK :
+            return {
+              ...state,
+              detailDeck: action.title
             }
     
         case ADD_CARD:
             return {
                 ...state,
-                [action.deck.title]:{
-                    ...action.deck,
-                    questions:[
-                        ...action.deck.questions,
-                        action.card
-                    ]
+                decks: {
+                    ...state.decks,
+                    [action.deck.title]:{
+                        ...action.deck,
+                        questions:[
+                            ...action.deck.questions,
+                            action.card
+                        ]
+                    }
                 }
             }
 

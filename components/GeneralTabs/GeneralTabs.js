@@ -4,6 +4,7 @@ import {createBottomTabNavigator} from 'react-navigation';
 
 import AddDeck from '../AddDeck/AddDeck';
 import Deck from '../Deck/Deck';
+import Settings from '../Settings/Settings';
 import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from '../../utils/colors';
 
 const GeneralTabs = createBottomTabNavigator({
@@ -19,6 +20,13 @@ const GeneralTabs = createBottomTabNavigator({
       navigationOptions: {
         tabBarLabel: 'Add Deck',
         tabBarIcon: ({ tintColor }) => <FontAwesome name='plus' size={30} color={tintColor} />
+      },
+    },
+    Settings: {
+      screen: Settings,
+      navigationOptions: {
+        tabBarLabel: 'Settings',
+        tabBarIcon: ({ tintColor }) => <FontAwesome name='cog' size={30} color={tintColor} />
       },
     },
   }, {

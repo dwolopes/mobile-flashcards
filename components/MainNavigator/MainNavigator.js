@@ -2,7 +2,8 @@ import React from 'react';
 import { Animated, Easing } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 
-import GeneralTabs from '../GeneralTabs//GeneralTabs'
+import GeneralTabs from '../GeneralTabs/GeneralTabs';
+import DetailTabs from '../DetailTabs/DetailTabs';
 import { darkBlue, lightBlue, blue, grey, lightGrey, paleBlue, white } from '../../utils/colors';
   
 const MainNavigatorRoot = createStackNavigator({
@@ -15,6 +16,15 @@ const MainNavigatorRoot = createStackNavigator({
         }
       }
     },
+    DetailTabs: {
+      screen: DetailTabs,
+      navigationOptions: {
+        headerTintColor: paleBlue,
+        headerStyle: {
+          backgroundColor: darkBlue
+        }
+      }
+    }
   }, {
     transitionConfig : () => ({
         transitionSpec: {

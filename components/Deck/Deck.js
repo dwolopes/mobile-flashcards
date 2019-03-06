@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Animated, ScrollView } from 'react-native';
 import { connect } from 'react-redux'
 import { receiveDecks, setDetailDeck } from '../../actions';
@@ -15,8 +15,8 @@ class Deck extends Component {
 
     try {
       getDecks()
-        .then((decks) => dispatch(receiveDecks(JSON.parse(decks))))
-    } catch(error) {
+        .then((decks) => dispatch(receiveDecks(decks)));
+    } catch (error) {
       alert(JSON.stringify(error))
     }
   }
@@ -29,7 +29,7 @@ class Deck extends Component {
     if (!Object.keys(decks).length) {
       return (
         <View style={styles.container}>
-          <Text style={[styles.header, {color: darkerBlue}]}>Mobile Flashcards</Text>
+          <Text style={[styles.header, { color: darkerBlue }]}>Mobile Flashcards</Text>
           <Welcome style={styles.message} navigation={this.props.navigation} />
         </View>
       )
@@ -41,33 +41,34 @@ class Deck extends Component {
         <Text>Your decks...</Text>
         {Object.keys(decks).map((key) => {
           const animatedValue = new Animated.Value(0)
-          return <Animated.View key={decks[key].title} style={{transform: [{translateX: animatedValue}]}}>
-             <DeckInfo key={decks[key].title} deck={decks[key]}
+          return <Animated.View key={decks[key].title} style={{ transform: [{ translateX: animatedValue }] }}>
+            <DeckInfo key={decks[key].title} deck={decks[key]}
               newPress={() => dispatch(setDetailDeck(decks[key].title))}
               onPress={() => {
+                Animated.sequence([
+                  Animated.timing(animatedValue, { duration: 400, toValue: -400 })
+                ]).start(() => {
+                  dispatch(setDetailDeck(decks[key].title))
+                  this.props.navigation.navigate(
+                    'DeckDetail',
+                    { detailId: decks[key].title }
+                  )
                   Animated.sequence([
-                    Animated.timing(animatedValue, { duration: 400, toValue: -400 })
-                  ]).start(() => {
-                    dispatch(setDetailDeck(decks[key].title))
-                    this.props.navigation.navigate(
-                      'DeckDetail',
-                      { detailId: decks[key].title }
-                    )
-                    Animated.sequence([
-                      Animated.timing(animatedValue, { duration: 500, toValue: -600 }),
-                      Animated.timing(animatedValue, { duration: 100, toValue: 0 })
-                    ]).start()
-                  })
-                }
+                    Animated.timing(animatedValue, { duration: 500, toValue: -600 }),
+                    Animated.timing(animatedValue, { duration: 100, toValue: 0 })
+                  ]).start()
+                })
               }
+            }
             />
           </Animated.View>
         })}
-        <Text style={{marginBottom: 400}}></Text>
+        <Text style={{ marginBottom: 400 }}></Text>
       </ScrollView>
     );
   }
-}
+};
+
 
 const styles = StyleSheet.create({
   container: {
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
   }
 });
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return {
     decks: state.decks
   }

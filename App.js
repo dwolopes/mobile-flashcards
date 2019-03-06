@@ -22,10 +22,6 @@ const styles = StyleSheet.create({
 });
 class App extends Component {
 
-  componentDidMount () {
-    setDefaultDecks();
-  }
-
   render() {
     return (
       <Provider store={createStore(reducer)}>
