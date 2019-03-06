@@ -78,15 +78,14 @@ This Pre Quiz includes:
 * When the score is displayed, buttons are displayed to either start the quiz over or go back to the Individual Deck view.
 * Both the 'Restart Quiz' and 'Back to Deck' buttons route correctly to their respective views.
 
-**New Deck**
+### **New Deck**
 
 The view includes a form for creating a new deck;
 
-**New Card**
+### **New Card**
 
 The view includes a form for creating a new card within that deck;
 
-****
 [(Back to top)](#mobile-flashcards)
 
 ## **Features**
