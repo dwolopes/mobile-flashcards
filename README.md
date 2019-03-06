@@ -88,19 +88,13 @@ The view includes a form for creating a new card within that deck;
 
 [(Back to top)](#mobile-flashcards)
 
-## **Features**
-As the project has a lot of potencial to grow in features, I decided to add some new features beyond the default features that are demanded by the project specification.
-- **Improved sort**: At the project specification it says to be able to sort posts by date or votes count, but I decided to improve the options and added Title, Comments Count together with sort order (crescent or decrescent);
-- **Search bar**: Users can search for posts using key words. The words searched must be present in the posts' body, this way  the post will be returned.
-
-[(Back to top)](#mobile-flashcards)
 
 ## **Built with**
 - [REACT](https://reactjs.org/) - A JavaScript library for building user interfaces
 - [Redux](https://github.com/reduxjs/redux/) - Predictable state container for JavaScript apps.
-- [Redux Thunk](https://github.com/reduxjs/redux-thunk) - Thunk middleware for Redux.
-- [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) - Responsible for managing routes in tge App.
-- [Material-UI](https://material-ui.com/) - React components that implement Google's Material Design to style the App.
+- [React Redux](https://redux.js.org/basics/usage-with-react) - React and Redux together to build powerfull apps
+- [React Native](https://facebook.github.io/react-native/) - Build native mobile apps using JavaScript and React.
+- [React Navigation](https://reactnavigation.org/) - Routing and navigation for your React Native apps.
 
 You can check the other dependencies on _package.json_ file.
 
