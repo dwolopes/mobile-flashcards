@@ -13,7 +13,6 @@
     - [**Quiz Page**](#quiz-page)
     - [**New Deck**](#new-deck)
     - [**New Card**](#new-card)
-  - [**Features**](#features)
   - [**Built with**](#built-with)
   - [**Contributing**](#contributing)
   - [**Authors**](#authors)
@@ -107,7 +106,7 @@ Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduc
 
 ## **Authors**
 
-* **Douglas Lopes** - *Initial work* - [readable-post-react-redux](https://github.com/dwolopes/mobile-flashcards)
+* **Douglas Lopes** - *Initial work* - [mobile-flashcards](https://github.com/dwolopes/mobile-flashcards)
 
 See also the list of [contributors](https://github.com/dwolopes/mobile-flashcards/graphs/contributors who participated in this project.
 
