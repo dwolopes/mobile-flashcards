@@ -1,4 +1,3 @@
-![ReadableScreen](readme-images/readme-mais-page.png)
 # **Mobile Flashcards**
 **Mobile Flashcards** is the third and last project from the **Udacity's React Developer Nanodegree** program.We should build a mobile application (Android or iOS - or both) that allows users to study collections of flashcards. The app will allow users to create different categories of flashcards called "decks", add flashcards to those decks, then take quizzes on those decks.The project emphasizes the use of **REACT NATIVE** bulding a mobile APP and **REDUX** to manage the application state.
 
@@ -32,6 +31,7 @@ $ git clone https://github.com/dwolopes/mobile-flashcards
 # Go into the repository and install the application dependencies
 $ cd mobile-flashcards
 $ yarn install
+```
 
 > [Dowload Node.Js and NPM](https://nodejs.org/en/download/).
 
@@ -62,7 +62,6 @@ At the main page, The user will be informed of how to start a Quiz, how to creat
 
 This Pre Quiz includes:
 
-* Bullet list
 * The deck title
 * Number of cards in the deck
 * Option to start a quiz for that deck
