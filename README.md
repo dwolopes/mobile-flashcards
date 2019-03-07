@@ -9,10 +9,11 @@
     - [**Start the Client**](#start-the-client)
   - [**How it works**](#how-it-works)
     - [**Main Page**](#main-page)
-    - [**Pre Quiz**](#pre-quiz)
+    - [**Deck Detail**](#deck-detail)
     - [**Quiz Page**](#quiz-page)
     - [**New Deck**](#new-deck)
     - [**New Card**](#new-card)
+    - [**Settings**](#settings)
   - [**Built with**](#built-with)
   - [**Contributing**](#contributing)
   - [**Authors**](#authors)
@@ -50,13 +51,14 @@ $ cd mobile-flashcards
 # Start the client
 $ yarn start
 ```
+After that, take your smartphone and read the QR code on the your computers screen.
 
 ## **How it works**
 
 ### **Main Page**
 This page is the root of the APP. At this page the user can see all the created decks in a list and create a deck as well. If user does not want to create a deck, they can tap a deck to start anwser a Quiz within the deck chosen.
 
-### **Pre Quiz**
+### **Deck Detail**
 At the main page, The user will be informed of how to start a Quiz, how to create a card and more instructions about that deck that was tapped and selected by the user. 
 
 This Pre Quiz includes:
@@ -66,7 +68,7 @@ This Pre Quiz includes:
 * Option to start a quiz for that deck
 * Option to add a new question to the deck
 
-### **Quiz Page**
+### **Quizes Page**
 
 * The Quiz view starts with a question from the selected deck.
 * The question is displayed, along with a button to show the answer.
@@ -84,6 +86,10 @@ The view includes a form for creating a new deck;
 ### **New Card**
 
 The view includes a form for creating a new card within that deck;
+
+### **Settings*
+
+In this view you can reset your decks and avoid notifications.
 
 [(Back to top)](#mobile-flashcards)
 
