@@ -104,15 +104,21 @@ You can check the other dependencies on _package.json_ file.
 
 Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
 
+[(Back to top)](#mobile-flashcards)
+
 ## **Authors**
 
 * **Douglas Lopes** - *Initial work* - [mobile-flashcards](https://github.com/dwolopes/mobile-flashcards)
 
 See also the list of [contributors](https://github.com/dwolopes/mobile-flashcards/graphs/contributors who participated in this project.
 
+[(Back to top)](#mobile-flashcards)
+
 ## **License**
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+[(Back to top)](#mobile-flashcards)
 
 ## **Contact me**
 
