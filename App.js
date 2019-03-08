@@ -22,6 +22,10 @@ const styles = StyleSheet.create({
 });
 class App extends Component {
 
+  componentDidMount() {
+    setLocalNotification()
+  }
+
   render() {
     return (
       <Provider store={createStore(reducer)}>

@@ -16,22 +16,6 @@ export function clearLocalNotification () {
     .then(Notifications.cancelAllScheduledNotificationsAsync)
 }
 
-function createNotification () {
-  return {
-    title: "Time to take a quiz?",
-    body: "You haven't taken a quiz yet today... Your decks are waiting—don't fall behind!",
-    ios: {
-      sound: true
-    },
-    android: {
-      sound: true,
-      priority: 'high',
-      sticky: false,
-      vibrate: true
-    }
-  }
-}
-
 export function setLocalNotification () {
   AsyncStorage.getItem(NOTIFICATION_KEY)
     .then(JSON.parse)
@@ -60,4 +44,20 @@ export function setLocalNotification () {
           })
       }
     })
+}
+
+function createNotification () {
+  return {
+    title: "Time to take a quiz?",
+    body: "You haven't taken a quiz yet today... Your decks are waiting—don't fall behind!",
+    ios: {
+      sound: true
+    },
+    android: {
+      sound: true,
+      priority: 'high',
+      sticky: false,
+      vibrate: true
+    }
+  }
 }
